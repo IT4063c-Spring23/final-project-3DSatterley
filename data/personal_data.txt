@@ -1,0 +1,3 @@
+Body_Weight Squat   Bench   Deadlift    Total
+83.9145884  142.881596  111.130131  156.489368  410.501095
+
