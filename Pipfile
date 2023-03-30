@@ -9,6 +9,12 @@ jupyter = "*"
 notebook = "*"
 black = "*"
 opendatasets = "*"
+pandas = "*"
+pipenv = "*"
+install = "*"
+lxml = "*"
+seaborn = "*"
+matplotlib = "*"
 
 [dev-packages]
 

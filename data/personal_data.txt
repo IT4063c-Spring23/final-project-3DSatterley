@@ -1,3 +1,2 @@
-Body_Weight Squat   Bench   Deadlift    Total
-83.9145884  142.881596  111.130131  156.489368  410.501095
-
+Name,Sex,BodyweightKg,Best3SquatKg,Best3BenchKg,Best3DeadliftKg,TotalKg
+Eddie Satterley, M,86.2,158.7,111.1,165.6,435.5
