@@ -50,7 +50,7 @@
 
 # # Loading Data
 
-# In[85]:
+# In[2]:
 
 
 import pandas as pd
@@ -67,28 +67,28 @@ mpl.rc('ytick', labelsize=12)
 plt.style.use("bmh")
 
 
-# In[27]:
+# In[3]:
 
 
 dataset_url = 'https://www.kaggle.com/datasets/open-powerlifting/powerlifting-database'
 od.download(dataset_url, data_dir='./data')
 
 
-# In[65]:
+# In[4]:
 
 
 powerlifting_df = pd.read_csv('./data/powerlifting-database/openpowerlifting.csv')
 powerlifting_df.head()
 
 
-# In[66]:
+# In[5]:
 
 
 personal_df = pd.read_table('./data/personal_data.txt', sep=',')
 personal_df
 
 
-# In[30]:
+# In[6]:
 
 
 urls = [('https://exrx.net/Testing/WeightLifting/BenchStandardsKg'), ('https://exrx.net/Testing/WeightLifting/DeadliftStandardsKg'), ('https://exrx.net/Testing/WeightLifting/SquatStandardsKg')]
@@ -106,7 +106,7 @@ for url in urls:
 standard_df
 
 
-# In[67]:
+# In[7]:
 
 
 final_df = pd.concat((powerlifting_df,personal_df))
@@ -119,14 +119,14 @@ final_df
 
 # First wanted to have a correlation matrix of all the varaibles before I reduced the columns just to see:
 
-# In[73]:
+# In[8]:
 
 
 final_df_corr = final_df.corr()
 final_df_corr
 
 
-# In[75]:
+# In[9]:
 
 
 sns.heatmap(final_df_corr)
@@ -136,7 +136,7 @@ sns.heatmap(final_df_corr)
 
 # I know for my project I will not need the meet or any real information other than their best lifts (the weight that was actually lifted and not the fails), their total weights from all their lifts, their body weight, possibly their weight class and the event has to include all three lifts in order to get the most precise lift totals. Wilks is a value that determines the 'best lifter' baised on calculations to compare everyone even in different weight groups and sex's. 
 
-# In[76]:
+# In[10]:
 
 
 final_df = final_df[['Name','Sex','Event','BodyweightKg','WeightClassKg','Best3SquatKg', 'Best3BenchKg', 'Best3DeadliftKg', 'TotalKg', 'Wilks']]
@@ -144,7 +144,7 @@ final_df = final_df[final_df['Event'] == 'SBD']
 final_df
 
 
-# In[77]:
+# In[11]:
 
 
 display(final_df.shape)
@@ -154,13 +154,13 @@ display(final_df.describe())
 
 # ## Duplicates
 
-# In[78]:
+# In[12]:
 
 
 final_df.duplicated().sum()
 
 
-# In[79]:
+# In[13]:
 
 
 final_df[final_df.duplicated]
@@ -168,13 +168,13 @@ final_df[final_df.duplicated]
 
 # I figured to drop the duplicates thinking they just competed multiple times so they had multiple entries. Even if that is the case, the duplicates are not needed for the findings. So they can all be dropped. 
 
-# In[80]:
+# In[14]:
 
 
 final_df.drop_duplicates( inplace= True)
 
 
-# In[81]:
+# In[15]:
 
 
 display(final_df.duplicated().sum())
@@ -183,7 +183,7 @@ display(final_df.shape)
 
 # ## Missing Values
 
-# In[82]:
+# In[16]:
 
 
 final_df.isna().sum()
@@ -191,7 +191,7 @@ final_df.isna().sum()
 
 # Since I am dealing with weightlifting data, I can not just insert a median or average into missing values (for example median bench press is 275lbs and a 140lb lifter has no values. That 140lb lifter now has 275lb bench which is very un-likely). Because of this, I will drop all of the missing values. 
 
-# In[84]:
+# In[17]:
 
 
 final_df.dropna(inplace=True)
@@ -201,14 +201,14 @@ display(final_df.shape)
 
 # ## Outliers
 
-# In[86]:
+# In[18]:
 
 
 final_df['BodyweightKg'].plot(kind='box')
 plt.show()
 
 
-# In[87]:
+# In[19]:
 
 
 q1 = final_df['BodyweightKg'].quantile(.25)
@@ -223,13 +223,13 @@ upper_bound = q3 + 1.5 * range
 print('Lower bound: {}, Upper bound: {}'.format(lower_bound,upper_bound))
 
 
-# In[88]:
+# In[20]:
 
 
 final_df[(final_df['BodyweightKg'] < lower_bound) | (final_df['BodyweightKg'] > upper_bound)]
 
 
-# In[90]:
+# In[21]:
 
 
 final_df['BodyweightKg'].plot.hist(bins=40)
@@ -241,13 +241,15 @@ plt.show()
 
 # After looking at the outliers, I believe I will keep these values. As people can truly be 150kg, especially powerlifters. So I will keep this larger values in. 
 
+# ## Next Steps
+
 # As for the next steps, for ML, I believe I will use the standard_df to help determine if theese lifters are considered above average, intermidiate, elite, etc. from their lifting numbers compared to others in their weight class. 
 
 # # Resources and References
 # *What resources and references have you used for this project?*
 # 📝 <!-- Answer Below -->
 
-# In[34]:
+# In[22]:
 
 
 # ⚠️ Make sure you run this cell at the end of your notebook before every submission!
