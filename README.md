@@ -12,19 +12,16 @@
 
 | Category          | Score    |
 | ----------------- | -------- |
-| **Setup**         | ... / 10 |
-| **Execution**     | ... / 20 |
-| **Documentation** | ... / 10 |
-| **Presentation**  | ... / 30 |
-| **Total**         | ... / 70 |
+| **Setup**         | 10 / 10 |
+| **Execution**     | 16 / 20 |
+| **Documentation** | 10 / 10 |
+| **Presentation**  | 28 / 30 |
+| **Total**         | 64 / 70 |
 
 ### Reflection
 <!-- Edit the following section with your reflection -->
 
-#### What went well?
-#### What did not go well?
-#### What did you learn?
-#### What would you do differently next time?
+I feel as though my documentation and EDA went really well. However what I would do if I had more time with this final is to add a Linear regression model using bodyweight and totalkg then predict the wilks for my regression model. I took some points off because of missing the linear model as well as not using my third dataset. 
 
 ---
 
