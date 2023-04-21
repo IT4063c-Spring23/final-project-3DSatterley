@@ -1,27 +1,21 @@
 # Mass Moves Mass?
-<!-- Edit the title above with your project title -->
 
 ## Project Overview
 
 ## Self Assessment and Reflection
 
-<!-- Edit the following section with your self assessment and reflection -->
-
 ### Self Assessment
-<!-- Replace the (...) with your score -->
 
 | Category          | Score    |
 | ----------------- | -------- |
 | **Setup**         | 10 / 10 |
-| **Execution**     | 16 / 20 |
+| **Execution**     | 20 / 20 |
 | **Documentation** | 10 / 10 |
 | **Presentation**  | 28 / 30 |
-| **Total**         | 64 / 70 |
+| **Total**         | 68 / 70 |
 
 ### Reflection
-<!-- Edit the following section with your reflection -->
-
-I feel as though my documentation and EDA went really well. However what I would do if I had more time with this final is to add a Linear regression model using bodyweight and totalkg then predict the wilks for my regression model. I took some points off because of missing the linear model as well as not using my third dataset. 
+I feel as though my documentation and EDA went really well. I also feel as though the question and data gotten back was very interesting and intriguing findings. The last part of my project with the fun facts and using my own data are my favorite part of the project. I feel as though those findings are really cool. I marked some off for my presentation because I felt that I talked really fast and I did not have all of the findings that I have now when I presented. 
 
 ---
 
